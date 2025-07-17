@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "730325918777",
+    "project_id": "builtkart-7960a",
+    "storage_bucket": "builtkart-7960a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730325918777:android:c00025e50682940b4f59e8",
+        "android_client_info": {
+          "package_name": "markle.builtKart.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXZcJY-63xV1dBNY5UO2OemQ2lLNycIT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

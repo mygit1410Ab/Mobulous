@@ -1,0 +1,5 @@
+export const LOGIN_ACTION = `LOGIN_ACTION`;
+export const SIGNUP_ACTION = `SIGNUP_ACTION`;
+export const VERIFY_EMAIL_ACTION = `VERIFY_EMAIL_ACTION`;
+export const GET_ALL_USERS = `GET_ALL_USERS`;
+export const EDIT_PROFILE = 'EDIT_PROFILE';

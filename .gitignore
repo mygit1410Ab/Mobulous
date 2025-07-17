@@ -1,0 +1,41 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# React Native
+android/.gradle
+android/app/build
+ios/Pods
+ios/Podfile.lock
+ios/build
+*.xcworkspace
+*.xcodeproj
+*.idea/
+*.swp
+
+# Bundler
+.bundle/
+
+# Watchman
+.watchmanconfig
+
+# Testing
+coverage/
+__tests__/
+
+# Environment
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+*.iml
+
+# Build output
+build/
+dist/
