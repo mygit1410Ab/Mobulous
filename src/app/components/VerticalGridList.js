@@ -17,6 +17,9 @@ import TextComp from './textComp';
 import {useNavigation} from '@react-navigation/native';
 import {SCREEN} from '../layouts';
 import {width} from '../hooks/responsive';
+import {createChatRoom} from '../../utils/chatServices';
+import {useDispatch, useSelector} from 'react-redux';
+import {createChatRoomAction} from '../../redux/action';
 
 const ITEM_WIDTH = width * 0.88;
 
@@ -29,13 +32,20 @@ const VerticalGridList = ({
   loading = false, // New: pass loading from parent
   keyExtractor = (item, index) => index.toString(),
 }) => {
+  const userData = useSelector(state => state.user.userData);
   const memoizedData = useMemo(() => data, [data]);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const renderItem = useCallback(
     ({item, index}) => (
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate(SCREEN.SINGLE_PRODUCT_SCREEN, {item})
+          dispatch(
+            createChatRoomAction(
+              {userData, receiverData: item, navigation},
+              () => console.log('Chat created successfully!'),
+            ),
+          )
         }
         style={[styles.item, itemStyle]}>
         <FastImage
@@ -59,9 +69,15 @@ const VerticalGridList = ({
           <TextComp numberOfLines={1} style={styles.priceStyle}>
             {`${item?.email ?? 'N/A'}`}
           </TextComp>
-          <TextComp numberOfLines={1} style={styles.priceStyle}>
-            {`${item?.mobile ?? 'N/A'}`}
-          </TextComp>
+          {item?.mobile ? (
+            <TextComp numberOfLines={1} style={styles.priceStyle}>
+              {`${item?.mobile ?? 'N/A'}`}
+            </TextComp>
+          ) : (
+            <TextComp numberOfLines={1} style={styles.priceStyle}>
+              {`${item?.lastMsg ?? 'N/A'}`}
+            </TextComp>
+          )}
         </View>
       </TouchableOpacity>
     ),

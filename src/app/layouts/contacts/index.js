@@ -10,7 +10,7 @@ import {width} from '../../hooks/responsive';
 import {getAllUsersAction} from '../../../redux/action';
 import VerticalGridList from '../../components/VerticalGridList';
 
-const Categories = () => {
+const Contacts = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
@@ -70,4 +70,4 @@ const styles = {
   },
 };
 
-export default Categories;
+export default Contacts;

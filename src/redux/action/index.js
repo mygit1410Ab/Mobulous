@@ -28,3 +28,9 @@ export const editProfileAction = (payload, callBack) => ({
   payload,
   callBack,
 });
+
+export const createChatRoomAction = (payload, callBack) => ({
+  type: TYPES['CREATE_CHAT_ROOM'],
+  payload,
+  callBack,
+});

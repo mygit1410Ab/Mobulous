@@ -6,18 +6,20 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import rootSaga from './sagas';
 import authReducer from '../redux/slices/authSlice';
 import userReducer from '../redux/slices/userDataSlice';
+import chatReducer from '../redux/slices/chatSlice';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
+  chat: chatReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['auth', 'user'],
+  whitelist: ['auth', 'user', 'chat'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

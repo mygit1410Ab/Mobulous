@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {scale, verticalScale} from 'react-native-size-matters';
 import {SCREEN} from '../app/layouts';
 import Home from '../app/layouts/home';
-import Categories from '../app/layouts/categories';
+import Contacts from '../app/layouts/contacts';
 import TextComp from '../app/components/textComp';
 import Icon from '../utils/icon';
 import {COLORS} from '../res/colors';
@@ -26,22 +26,16 @@ const BottomStack = ({navigation}) => {
               iconName = 'inbox';
               iconType = 'Octicons';
               break;
-            case SCREEN.CATEGORIES:
+            case SCREEN.Contacts:
               iconName = 'contacts';
               iconType = 'AntDesign';
               break;
-            case SCREEN.CART:
-              iconName = 'user';
-              iconType = 'AntDesign';
-              break;
-
             default:
               iconName = 'circle';
           }
 
           return (
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              {/* Small circle above icon when focused */}
               {focused && (
                 <View
                   style={{
@@ -77,8 +71,8 @@ const BottomStack = ({navigation}) => {
         ),
         tabBarStyle: {
           backgroundColor: COLORS.primaryAppColor,
-          height: verticalScale(45), // increased height
-          paddingBottom: verticalScale(8), // spacing for icon & circle
+          height: verticalScale(45),
+          paddingBottom: verticalScale(8),
           justifyContent: 'center',
           paddingTop: 10,
         },
@@ -91,9 +85,9 @@ const BottomStack = ({navigation}) => {
         options={{title: 'Home'}}
       />
       <Tab.Screen
-        name={SCREEN.CATEGORIES}
-        component={Categories}
-        options={{title: 'Categories'}}
+        name={SCREEN.Contacts}
+        component={Contacts}
+        options={{title: 'Contacts'}}
       />
     </Tab.Navigator>
   );

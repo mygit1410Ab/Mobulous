@@ -27,6 +27,7 @@ const StaticeHeader = ({headerLabel, showFilterIcon = true, onpressFilter}) => {
 
         <TouchableOpacity
           onPress={() => navigation.navigate(SCREEN.SEARCH)}
+          disabled
           style={styles.searchContainer}>
           <TextComp style={styles.searchText}>Search</TextComp>
           <Icon name="search" type="EvilIcons" size={20} color={COLORS.black} />

@@ -23,6 +23,7 @@ import {width} from '../app/hooks/responsive';
 import Header from '../app/components/Header';
 import auth from '@react-native-firebase/auth';
 import {clearUserData} from '../redux/slices/userDataSlice';
+import {clearAllChats} from '../redux/slices/chatSlice';
 
 const drawerItems = [
   {
@@ -92,8 +93,10 @@ const CustomDrawerContent = props => {
     try {
       await auth().signOut();
       dispatch(clearUserData());
+      dispatch(clearAllChats());
       dispatch(logoutUser());
       dispatch({type: 'LOGOUT'});
+
       await AsyncStorage.clear();
       Toast.show('User Logged out', Toast.SHORT);
     } catch (error) {

@@ -6,9 +6,9 @@ export const SCREEN = Object.freeze({
   FORGOT_PASSWORD: 'ForgotPassword',
   DRAWER_HOME: 'Home', // <- Drawer screen name
   HOME_TAB: 'Home', // <- Drawer & Tab name
-  CATEGORIES: 'Categories', // <- Tab name
+  Contacts: `Contacts`, // <- Tab name
   SEARCH: `Search`,
   SELF_PROFILE: `selfProfile`,
   Purchase: `Purchase`,
-  Contacts: `Contacts`,
+  ChatScreen: `ChatScreen`,
 });
