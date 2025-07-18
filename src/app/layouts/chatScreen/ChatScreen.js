@@ -613,6 +613,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
     justifyContent: 'flex-end',
   },
+  recordingContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+  },
+  recordingTime: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: '#666',
+  },
   headerCard: {
     paddingHorizontal: verticalScale(10),
     backgroundColor: '#FFF',
@@ -787,7 +798,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     borderRadius: 10,
-    maxWidth: '75%',
+    maxWidth: '50%',
+    width: '50%',
   },
   audioContainerPlaying: {
     maxWidth: '90%',
